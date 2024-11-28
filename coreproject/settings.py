@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     "rest_framework",
     "corsheaders",
+    "rest_framework.authtoken",
+    "dj_rest_auth",
 
     'accounts',
     'posts',
@@ -142,5 +144,9 @@ CORS_ORIGIN_WHITELIST = (
 REST_FRAMEWORK = {
         "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.IsAuthenticated",
+    ],
+        "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication", 
     ],
 }
